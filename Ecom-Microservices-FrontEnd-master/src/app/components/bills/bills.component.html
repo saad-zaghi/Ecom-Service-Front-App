@@ -1,0 +1,29 @@
+<div class="container">
+
+  <div class="card p-2" *ngIf="bill;">
+    <div class="card-header"><h4> Customer bills</h4></div>
+    <div class="card-body">
+
+      <table class="table table-hover ">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let b of bill" >
+          <td>{{b.id}}</td>
+          <td>{{b.billingDate}}</td>
+          <td>{{b.status}}</td>
+          <td>
+            <button class="btn btn-light" (click)="getBillDetails(b)">Bill details</button>
+          </td>        </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-success" (click)="previous()" style="float: left;">Previous</button>
+    </div>
+  </div>
+</div>

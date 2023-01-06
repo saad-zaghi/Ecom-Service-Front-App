@@ -1,0 +1,24 @@
+{{billdetails.billingDate}}
+<div class="container">
+  <div class="card p-2" *ngIf="billdetails;">
+    <div class="card-header"><h4>Bill details</h4></div>
+    <div class="card-body">
+      <table class="table table-hover ">
+        <thead>
+        </thead>
+        <tbody>
+        <tr *ngFor="let b of billdetails._embedded.productItems">
+          <td >{{b.productName}}</td>
+          <td>Quantity:</td>
+          <th>{{b.quantity}}</th>
+          <td>Total:</td>
+          <th>{{b.quantity*b.price}}</th>
+        </tr>
+
+        </tbody>
+      </table>
+      <button class="btn btn-success" (click)="previous()" style="float: left;">Previous</button>
+    </div>
+  </div>
+</div>
+
